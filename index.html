@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#121212">
+  <title>Hitster</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <section id="screen-start" class="screen active">
+      <h1>Hitster</h1>
+      <p class="intro">
+        Scan de QR-code op een kaart. Het nummer speelt af zonder titel, artiest of jaar te
+        tonen — leg de kaart in je tijdlijn en draai hem om voor het antwoord.
+      </p>
+      <p id="spotify-status" class="status"></p>
+      <button id="btn-login" class="btn btn-primary" hidden>Login met Spotify</button>
+      <button id="btn-scan" class="btn btn-primary" hidden>Scan kaart</button>
+      <button id="btn-settings" class="btn btn-link">Instellingen</button>
+      <p id="start-error" class="error" role="alert"></p>
+    </section>
+
+    <section id="screen-settings" class="screen">
+      <h2>Instellingen</h2>
+      <label for="input-client-id">Spotify Client ID</label>
+      <input id="input-client-id" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Plak hier de Client ID">
+      <p class="hint">
+        Redirect-URI om in het Spotify Developer Dashboard te registreren:<br>
+        <code id="redirect-uri-display"></code>
+      </p>
+      <button id="btn-save-settings" class="btn btn-primary">Opslaan</button>
+      <button id="btn-logout" class="btn btn-secondary">Uitloggen bij Spotify</button>
+      <button id="btn-back-start" class="btn btn-link">Terug</button>
+      <p id="settings-error" class="error" role="alert"></p>
+    </section>
+
+    <section id="screen-scanner" class="screen">
+      <h2>Scan de kaart</h2>
+      <div id="qr-reader"></div>
+      <p id="scan-error" class="error" role="alert"></p>
+      <button id="btn-cancel-scan" class="btn btn-secondary">Annuleer</button>
+    </section>
+
+    <section id="screen-playing" class="screen">
+      <div id="play-indicator" class="play-indicator">&#9835;</div>
+      <p id="playing-error" class="error" role="alert"></p>
+      <div class="controls">
+        <button id="btn-toggle-play" class="btn btn-primary">Pauze</button>
+        <button id="btn-restart" class="btn btn-secondary">Opnieuw</button>
+        <button id="btn-next" class="btn btn-primary">Volgende kaart</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

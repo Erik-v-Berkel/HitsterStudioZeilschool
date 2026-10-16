@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: #121212;
+  color: #f5f5f5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: env(safe-area-inset-top) 1.25rem env(safe-area-inset-bottom);
+}
+
+.screen {
+  display: none;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+.screen.active {
+  display: flex;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.intro {
+  color: #c7c7c7;
+  line-height: 1.5;
+}
+
+.status {
+  color: #9bd99b;
+  min-height: 1.5em;
+  margin: 0;
+}
+
+.btn {
+  min-height: 56px;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}
+
+.btn-primary {
+  background: #1db954;
+  color: #0b0b0b;
+  font-weight: 600;
+}
+
+.btn-primary:active {
+  background: #17a44a;
+}
+
+.btn-secondary {
+  background: #2a2a2a;
+  color: #f5f5f5;
+}
+
+.btn-secondary:active {
+  background: #383838;
+}
+
+.btn-link {
+  background: transparent;
+  color: #9bb0ff;
+  min-height: 44px;
+  text-decoration: underline;
+}
+
+.error {
+  color: #ff6b6b;
+  min-height: 1.4em;
+  margin: 0;
+  white-space: pre-line;
+}
+
+.hint {
+  color: #9a9a9a;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  word-break: break-all;
+}
+
+label {
+  text-align: left;
+  color: #c7c7c7;
+}
+
+input[type="text"] {
+  min-height: 48px;
+  font-size: 1rem;
+  padding: 0 0.75rem;
+  border-radius: 10px;
+  border: 1px solid #3a3a3a;
+  background: #1c1c1c;
+  color: #f5f5f5;
+}
+
+#qr-reader {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
+  min-height: 280px;
+}
+
+.play-indicator {
+  font-size: 6rem;
+  line-height: 1;
+  margin: 2rem 0;
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+.play-indicator.paused {
+  animation: none;
+  opacity: 0.5;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.12); opacity: 0.75; }
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
